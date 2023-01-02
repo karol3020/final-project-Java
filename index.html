@@ -54,10 +54,10 @@
                 <div class="searchinput">
                     <div class="input">
                         <input type="text" class="input__search--modify" placeholder="Search by Name, Year or Date">
-                        <button class="btn__search--modify" onclick="removeglass()">
-                            <i class="fa-solid fa-magnifying-glass" id="glass"></i>
-                            <div class="spinner__show" onclick="addSpinner()">
-                                <i class="fa-solid fa-spinner" id="spinner"></i>
+                        <button class= btn__search--modify>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <div class="spinner__show">
+                                <i class=fa-solid fa-spinner></i>
                             </div>
                         </button>
                     </div>
@@ -67,10 +67,28 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row row__center">
+            <div class="film-list">
+                <div class="film">
+                    <div class="film-card">
+                        <div class="film-card__container">
+                            <h3 class="title__film">${films.Title}</h3>
+                            <p><b class="font">Year:</b>${films.Year}</p>
+                            <p><b class="font">Type:</b>${films.Type}</p>
+                            <p><b class="font">Img:</b>${films.Poster}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <a href="#projects" class="scroll">
-            <div class="scroll__icon click"></div>
-        </a>
+        <div class="scroll__footer">
+            <a href="#projects" class="scroll">
+                <div class="scroll__icon click"></div>
+            </a>
+        </div>
 </section>
 </body>
 </html>
