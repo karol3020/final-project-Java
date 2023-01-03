@@ -126,41 +126,6 @@ LANDING PAGE
     font-size: 34px;
 }
 
-.scroll{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.scroll__icon{
-    width: 20px;
-    height: 30px;
-    border: 2px solid #242424;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.scroll__icon::after{
-    background-color: #242424;
-    content:"";
-    width: 4px;
-    height: 6px;
-    border-radius: 2px;
-    animation: scroll 1000ms infinite alternate-reverse;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateY(3px);
-    }
-
-    100%{
-        transform: translateY(-3px);
-    }
-}
 
 /*
 
@@ -199,85 +164,6 @@ nav{
     font-weight:700;
 }
 
-/* 
-
-SEARCH INPUT 
-
-*/
-
-.searchinput{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-
-.input{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.input__search--modify{
-    margin-right: 16px;
-    border: 1px solid black;
-    box-shadow: 1.5cm;
-    border-radius: 999px;
-    width: 50%;
-    padding: 12px;
-    font-size: 24px;
-    text-align: center;
-}
-
-.btn__search--modify{
-    border: 1px solid black;
-    box-shadow: 1.5cm;
-    border-radius: 999px;
-    padding: 22px 62px;
-    background-color: black;
-    color: white;    
-    position: relative;
-}
-
-.btn__search--modify:hover{
-    border: 1px solid grey;
-    background-color: grey;
-}
-
-.fa-spinner{
-    visibility: hidden;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-.fa-solid{
-    font-size: 40px;
-}
-
-.fa-spinner{
-    animation: spinner 750ms infinite linear;
-}
-
-.img{
-    height: 25vh;
-}
-
-@keyframes spinner{
-    0%{
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 /*
 
@@ -286,12 +172,10 @@ FILM POSTERS
 */
 
 .film-list {
-    max-width: 1200px;
+    max-width: 100%;
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
   
   .film {
@@ -305,7 +189,6 @@ FILM POSTERS
     transition: 0.3s;
     cursor: pointer;
     border-radius: 10px;
-    width: calc(100%/6);
   }
   
   .film-card:hover {
@@ -333,11 +216,15 @@ FILM POSTERS
     padding: 2px 16px;  
 }
 
-  .film__title{
-    padding: 12px;
-    font-size: 18px;
+  .title__film{
+    padding: 8px;
+    font-size: 26px;
   }
 
+  .font{
+    padding: 6px;
+    font-size: 18px;
+  }
 
 /* Small phones, tablets, large smart phones */
 
@@ -345,7 +232,7 @@ FILM POSTERS
 .title {
     font-size: 80px;
 }
-}
+
 /* Small phones */
 
 @media (max-width: 480px) {
