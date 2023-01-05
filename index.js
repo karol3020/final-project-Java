@@ -46,13 +46,16 @@ function filmsHTML(films) {
 
 // renderFilms()
 
-function searchFilm() {
-    const loadFilmWrapper = document.querySelector('.film__wrapper')
-    const hideImg = document.querySelector('.img')
-    loading.classList += " .film__wrapper--loaded"
-    setTimeout(() => {
-        console.log('itworked')
-    },1000)
+function searchFilm(event) {
+    event.preventDefault();
+    const loading = document.querySelector(' .spinner__show')
+    const remove = document.querySelector (' .fa-solid')
+    remove.classList += " fa-solid--remove" 
+    loading.classList += " spinner__show--loading"
+    setTimeout (() => {
+        remove.classList.remove("fa-solid--remove")
+    }, 1000)
+    setTimeout (() => {
+        loading.classList.remove("spinner__show--loading")
+    }, 2000)
 }
-
-searchFilm()

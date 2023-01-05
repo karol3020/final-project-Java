@@ -220,7 +220,6 @@ SEARCH INPUT
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
 }
 
 .input{
@@ -264,31 +263,17 @@ SEARCH INPUT
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1;
 }
 
 .spinner__show--loading{
-    z-index: -1;
+    z-index: 1;
 }
-
-.spinner__show--done{
-    position: fixed;
-    z-index: -1;
-}
-
-
-.fa-solid{
-    font-size: 40px;
-}
-
-.img{
-    width: 50%;
-    z-index: 1 !important;
-}
-
 
 .fa-spinner{
     animation: spinner 750ms infinite linear;
 }
+
 @keyframes spinner{
     0%{
         transform: rotate(0);
@@ -297,6 +282,20 @@ SEARCH INPUT
         transform: rotate(360deg);
     }
 }
+.fa-solid {
+    font-size: 40px;
+    z-index: 1;
+}
+
+.fa-solid--remove{
+    z-index: -1;
+}
+
+.img{
+    width: 50%;
+    z-index: 1 !important;
+}
+
 
 /* 
 

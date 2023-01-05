@@ -52,19 +52,15 @@
         <div class="container">
             <div class="row">
                 <div class="searchinput">
-                    <div class="input">
-                        <input type="text" class="input__search--modify search__film"  placeholder="Search by Name, Year or Date"
-                        onsubmit="searchFilm()">
-                        <button class="btn__search--modify search__film" onsubmit="searchFilm()">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <div class="spinner__show spinner__show--loading">
+                    <form class="input" onsubmit="searchFilm(event)">
+                        <input type="text" class="input__search--modify search__film"  placeholder="Search by Name, Year or Date"></input>
+                        <button class="btn__search--modify search__film">
+                            <i class="fa-solid fa-magnifying-glass fa-solid--remove"></i>
+                            <div class="spinner__show">
                                 <i class="fa-solid fa-spinner"></i>
                             </div>
-                            <div class="spinner__show--done">
-                                done
-                            </div>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
