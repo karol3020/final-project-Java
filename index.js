@@ -25,37 +25,33 @@ function filmsHTML(films) {
 </div>`
 }
 
-// async function renderFilms() {
-//     const films = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=bf1ef21a&s=fast") 
-//     const filmsData = await films.json();
-//     const filmsListEl = document.querySelector(".film-list")
-//     filmsListEl.innerHTML = filmsData.Search.map((films) => filmsHTML(films)).join("");
-
-//     const filmsWrapper = document.querySelector('.film__wrapper')
-//     filmsWrapper.innerHTML = `<div class="film">
-//      <div class="film-card">
-//      <div class="film-card__container">
-//      <h3 class="film__title">${films.Title}</h3>
-//         <p><b class="font">Year:</b> ${films.Year}</p>
-//         <p><b class="font">Type:</b> ${films.Type}</p>
-//         <p><b class="font"></b><img src="${films.Poster}" class= "img__scale"></p>
-//      </div>
-//      </div>
-//      </div>`
-// }
-
-// renderFilms()
-
 function searchFilm(event) {
     event.preventDefault();
+    const remove = document.querySelector (' .fa-solid__remove')
     const loading = document.querySelector(' .spinner__show')
-    const remove = document.querySelector (' .fa-solid')
     remove.classList += " fa-solid--remove" 
     loading.classList += " spinner__show--loading"
-    setTimeout (() => {
-        remove.classList.remove("fa-solid--remove")
-    }, 1000)
-    setTimeout (() => {
-        loading.classList.remove("spinner__show--loading")
-    }, 2000)
+
+    const removeImg = document.querySelector (' .img')
+    const showModal = document.querySelector (' .modal')
+    removeImg.classList += " img__hide"
+    showModal.classList += " modal--show"
+
+        setTimeout (() => {
+            remove.classList.remove("fa-solid--remove");
+        }, 2500)
+        
+        setTimeout (() => {
+            loading.classList.remove("spinner__show--loading")
+        }, 2500)
+        
+        setTimeout(() => {
+            removeImg.classList.add("img__hide")
+        },3000)
+        
+        setTimeout(() => {
+            showModal.classList.add("modal__show")
+            console.log('work')
+        },3500)
 }
+

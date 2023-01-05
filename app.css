@@ -111,7 +111,7 @@ LANDING PAGE
 
 */
 #landing-page{
-    min-height: 100vh
+    min-height: 150vh
 }
 
 .row__center{
@@ -255,6 +255,7 @@ SEARCH INPUT
 }
 
 .spinner__show{
+    font-size: 40px;
     position: absolute;
     top: 0;
     left: 0;
@@ -282,8 +283,17 @@ SEARCH INPUT
         transform: rotate(360deg);
     }
 }
-.fa-solid {
+
+.fa-solid__remove {
     font-size: 40px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
 }
 
@@ -293,7 +303,15 @@ SEARCH INPUT
 
 .img{
     width: 50%;
-    z-index: 1 !important;
+    z-index: 1;
+}
+
+.img__scale{
+    width: 100%;
+  }
+
+.img__hide{
+    z-index: -1;
 }
 
 
@@ -303,9 +321,14 @@ MODAL
 
 */
 
+form{
+    display: flex;
+    justify-content: center;
+}
+
 .modal{
     position: absolute;
-    top: 100%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -0%);
     width: 90%;
@@ -316,6 +339,11 @@ MODAL
     overflow: hidden;
     display: flex;
     justify-content: center;
+    z-index: -1;
+}
+
+.modal--show {
+ z-index: 1;
 }
 
 h2{
@@ -389,23 +417,6 @@ FILM POSTERS
     text-align: center;
   }
 
-  .img__scale{
-    width: 100%;
-  }
-
-  /* 
-  
-  SEARCH ACTION 
-  
-  */
-
-    .film__wrapper--loaded {
-      z-index: 1;
-    }
-
-    .img__hide{
-        z-index: -1;
-    }
 
   /* 
   
