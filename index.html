@@ -54,14 +54,14 @@
                 <div class="searchinput">
                     <form class="input" onsubmit="searchFilm(event)">
                         <input type="text" class="input__search--modify"  placeholder="Search by Name, Year or Date"></input>
-                        <button class="btn__search--modify">
-                            <div class="fa-solid__remove">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                            <div class="spinner__show">
-                                <i class="fa-solid fa-spinner"></i>
-                            </div>
-                        </button>
+                            <button class="btn__search--modify">
+                                <div class="fa-solid__remove">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                                <div class="spinner__show">
+                                    <i class="fa-solid fa-spinner"></i>
+                                </div>
+                            </button>
                     </form>
                 </div>
             </div>
@@ -69,20 +69,17 @@
     </div>
 
     <div class="container container__padding">
-        <div class="row row__center">
-            <form onsubmit="searchFilm(event)">
+        <div class="row row__center" onsubmit="searchFilm()">
                 <img src="./assets/building.681ea6bf.png" alt="" class="img">
                 <div class="modal">
                     <div class="center">
-                        <h2>Here are the results :</h2> 
-                        <div class="film__space">
-                            <div class="film__wrapper film__wrapper--loaded">
+                        <h2>Here are the results</h2> 
+                        <select id="filter" onchange="filterFilms(event)">
+                            <option value="" disabled selected>Sort by Year</option>
+                            <option value="Newest">Year, Newest to Latest</option>
+                            <option value="Latest">Year, Latest to Newest</option>
+                        </select>
                         <div class="film-list">
-                            <!-- <select id="filter">
-                                <option value="" disabled selected>Sort by Year</option>
-                                <option value="Newest">Year, Newest to Latest</option>
-                                <option value="Latest">Year, Latest to Newest</option>
-                            </select> -->
                                 <div class="film">
                                     <div class="film-card">
                                         <div class="film-card__container">
@@ -91,47 +88,20 @@
                                             <p><b>Type:</b>Type</p> 
                                             <p><b></b>Poster</p>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                   </div>
                 </div>
             </div>
-            </form>
         </div>       
     </div>
 
-    
-    <!-- <div class="container">
-        <div class="row row__center">
-            <div class="film__wrapper film__wrapper--loaded">
-            <div class="film-list">
-                <!-- <select id="filter">
-                    <option value="" disabled selected>Sort by Year</option>
-                    <option value="Newest">Year, Newest to Latest</option>
-                    <option value="Latest">Year, Latest to Newest</option>
-                </select> -->
-                
-                    <!-- <div class="film">
-                        <div class="film-card">
-                            <div class="film-card__container">
-                                <h3 class="title__film">Title</h3>
-                                <p><b>Year:</b>Year</p>
-                                <p><b>Type:</b>Type</p> 
-                                <p><b></b>Poster</p>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
         <!-- <div class="scroll__footer">
             <a href="#projects" class="scroll">
                 <div class="scroll__icon click"></div>
             </a>
         </div> -->
+
 </section>
 </body>
 </html>
