@@ -4,13 +4,18 @@
 
 async function main(filter) {
     const films = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=bf1ef21a&s=fast") 
-    const filmsData = await films.json();
+    const filmsData = await films.json();    
     const filmsListEl = document.querySelector(".film-list")
-    // console.log(filmsData)
-    filmsListEl.innerHTML = filmsData.Search.map((films) => filmsHTML(films)).join("")
+    console.log(filmsData)
 
-    if(filter === 'Newest'){
-    filmsListEl.innerHTML.sort((a,b) => a.Year - b.Year)
+    filmsListEl.innerHTML = filmsData.Search.map((films) => filmsHTML(films)).slice(0,6).join("")
+
+    if (filter === 'Newest'){
+        filmsListEl.innerHTML = filmsData.Search.sort((a,b) => b.Year - a.Year).map((films) => filmsHTML(films)).slice(0,6)
+    }
+    
+    else if (filter === 'Latest') {
+        filmsListEl.innerHTML = filmsData.Search.sort((a,b) => a.Year - b.Year).map((films) => filmsHTML(films)).slice(0,6)
     }
 };
 
@@ -28,7 +33,7 @@ function filmsHTML(films) {
 }
 
 function filterFilms(event){
-    main(event.target.value)
+ main(event.target.value)
 }
 
 function searchFilm(event) {
@@ -49,44 +54,7 @@ function searchFilm(event) {
             showModal.classList += " modal--show"
           
             removeImg.classList.add("img__hide")
-            showModal.classList.add("modal__show")
-            console.log('it worked')    
+            showModal.classList.add("modal__show")  
         },50)
     }, 2500)
 }
-
-// function sortFilms() {
-//     const filmsWrapper = document.querySelector(".film-list")
-
-//     const films = getFilms()
-    
-//     const filmHtml = films.map((film-list) => { return `<div class="film-list">
-//     <div class="film">
-//     <div class="film-card">
-//         <div class="film-card__container">
-//             <h3 class="title__film">Title</h3>
-//             <p><b>Year:</b>${film-list.Year}</p>
-//             <p><b>Type:</b>Type</p> 
-//             <p><b></b>Poster</p>
-//         </div>
-// </div>
-// </div>
-// </div>`
-//     })
-//     .join("");
-//     filmsWrapper.innerHTML = filmHtml
-// }
-
-// setTimeout(() => {
-//     sortFilms()
-// })
-
-// // DATAAA
-
-// async function getFilms() {
-//     const films = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=bf1ef21a&s=fast") 
-//     const filmsData = await films.json();
-//     const filmsListEl = document.querySelector(".film-list")
-//     console.log(filmsData)
-//     filmsListEl.innerHTML = filmsData.Search.map((films) => filmsHTML(films)).join("")
-// }
